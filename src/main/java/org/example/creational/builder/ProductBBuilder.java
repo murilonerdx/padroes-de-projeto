@@ -1,23 +1,26 @@
 package org.example.creational.builder;
 
-public class ProductBBuilder implements Builder<ProductB> {
+public class ProductBBuilder implements Builder<ProductBBuilder, ProductB> {
 	private String name;
 	private int size;
 	private int inventory;
 
 	@Override
-	public void name(String name) {
+	public ProductBBuilder name(String name) {
 		this.name = name;
+		return this;
 	}
 
 	@Override
-	public void size(int size) {
+	public ProductBBuilder size(int size) {
 		this.size = size;
+		return this;
 	}
 
 	@Override
-	public int inventory(int inventory) {
-		return this.inventory = inventory;
+	public ProductBBuilder inventory(int inventory) {
+		this.inventory = inventory;
+		return this;
 	}
 
 	@Override

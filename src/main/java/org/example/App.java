@@ -1,13 +1,9 @@
 package org.example;
 
-import org.example.creational.abstractfactory.AbstractFactory;
 import org.example.creational.abstractfactory.AbstractProduct;
 import org.example.creational.abstractfactory.Application;
 import org.example.creational.abstractfactory.ConcretProduct;
-import org.example.creational.builder.Builder;
-import org.example.creational.builder.Director;
-import org.example.creational.builder.ProductBBuilder;
-import org.example.creational.builder.ProductBuilder;
+import org.example.creational.builder.*;
 
 /**
  * Hello world!
@@ -27,6 +23,7 @@ public class App {
 
 		Builder productBBuilder = new ProductBBuilder();
 		director.constructProductB(productBBuilder);
+
 		System.out.println(productBBuilder.build());
 	}
 }

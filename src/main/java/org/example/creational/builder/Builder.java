@@ -1,8 +1,8 @@
 package org.example.creational.builder;
 
-public interface Builder<T> {
-	void name(String name);
-	void size(int size);
-	int inventory(int inventory);
-	T build();
+public interface Builder<M, P> {
+	M name(String name);
+	M size(int size);
+	M inventory(int inventory);
+	P build();
 }
