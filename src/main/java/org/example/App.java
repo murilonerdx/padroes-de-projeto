@@ -6,6 +6,7 @@ import org.example.creational.abstractfactory.Application;
 import org.example.creational.abstractfactory.ConcretProduct;
 import org.example.creational.builder.Builder;
 import org.example.creational.builder.Director;
+import org.example.creational.builder.ProductBBuilder;
 import org.example.creational.builder.ProductBuilder;
 
 /**
@@ -23,5 +24,9 @@ public class App {
 		Builder productBuilder = new ProductBuilder();
 		director.constructProduct(productBuilder);
 		System.out.println(productBuilder.build());
+
+		Builder productBBuilder = new ProductBBuilder();
+		director.constructProductB(productBBuilder);
+		System.out.println(productBBuilder.build());
 	}
 }
