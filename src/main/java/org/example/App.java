@@ -12,6 +12,10 @@ import org.example.creational.factorymethod.ConcreteCreator2_;
 import org.example.creational.factorymethod.Creator_;
 import org.example.creational.prototype.*;
 import org.example.creational.singleton.Pokemon;
+import org.example.structural.adapter.ex1.Captain;
+import org.example.structural.adapter.ex1.FishingBoatAdapter;
+import org.example.structural.adapter.ex2.CardSSDAdapter;
+import org.example.structural.adapter.ex2.Notebook;
 
 /**
  * Hello world!
@@ -71,5 +75,13 @@ public class App {
 		System.out.println(pokemon.toString());
 
 
+		// Adapter
+		Captain caption = new Captain(new FishingBoatAdapter());
+		caption.row();
+
+		Notebook notebook = new Notebook(new CardSSDAdapter());
+		notebook.connectCardSSD();
+
 	}
+
 }
