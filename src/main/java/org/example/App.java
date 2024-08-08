@@ -1,5 +1,6 @@
 package org.example;
 
+import lombok.extern.slf4j.Slf4j;
 import org.example.creational.abstractfactory.AbstractProduct;
 import org.example.creational.abstractfactory.Application;
 import org.example.creational.abstractfactory.ConcretProduct;
@@ -16,10 +17,16 @@ import org.example.structural.adapter.ex1.Captain;
 import org.example.structural.adapter.ex1.FishingBoatAdapter;
 import org.example.structural.adapter.ex2.CardSSDAdapter;
 import org.example.structural.adapter.ex2.Notebook;
+import org.example.structural.bridge.FlyingEnchantment;
+import org.example.structural.bridge.Hammer;
+import org.example.structural.bridge.SoulEatingEnchantment;
+import org.example.structural.bridge.Sword;
+import org.example.structural.composite.Messenger;
 
 /**
  * Hello world!
  */
+@Slf4j
 public class App {
 	public static void main(String[] args) throws CloneNotSupportedException {
 		// Abstract Factory
@@ -82,6 +89,28 @@ public class App {
 		Notebook notebook = new Notebook(new CardSSDAdapter());
 		notebook.connectCardSSD();
 
+
+		//Bridge
+		Sword enchantedSword = new Sword(new SoulEatingEnchantment());
+		enchantedSword.wield();
+		enchantedSword.swing();
+		enchantedSword.unwield();
+
+
+		Hammer hammer = new Hammer(new FlyingEnchantment());
+		hammer.wield();
+		hammer.swing();
+		hammer.unwield();
+
+		//Composite
+
+		Messenger messenger = new Messenger();
+
+		log.info("Message from the orcs: ");
+		messenger.messageFromOrcs().print();
+
+		log.info("Message from the elves: ");
+		messenger.messageFromElves().print();
 	}
 
 }
