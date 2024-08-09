@@ -1,4 +1,4 @@
-package org.example.structural.bridge;
+package org.example.structural.bridge.ex1;
 
 public interface Weapon {
 

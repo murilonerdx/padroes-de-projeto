@@ -1,0 +1,1 @@
+Cria novos objetos copiando um protótipo existente. É útil quando a criação de objetos é complexa ou envolve muitos recursos, permitindo criar réplicas de objetos com poucas alterações.

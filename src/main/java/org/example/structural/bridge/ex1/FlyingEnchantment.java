@@ -1,4 +1,4 @@
-package org.example.structural.bridge;
+package org.example.structural.bridge.ex1;
 
 import lombok.extern.slf4j.Slf4j;
 

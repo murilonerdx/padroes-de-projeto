@@ -1,4 +1,4 @@
-package org.example.structural.composite;
+package org.example.structural.composite.ex1;
 
 import lombok.RequiredArgsConstructor;
 

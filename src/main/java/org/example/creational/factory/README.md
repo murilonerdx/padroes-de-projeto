@@ -1,0 +1,1 @@
+Cria objetos sem expor a lógica de criação ao cliente. A classe que usa o Factory não precisa saber qual classe concreta será instanciada, apenas que ela implementa uma interface ou herda de uma classe base.

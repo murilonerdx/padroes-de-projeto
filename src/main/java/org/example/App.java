@@ -17,11 +17,19 @@ import org.example.structural.adapter.ex1.Captain;
 import org.example.structural.adapter.ex1.FishingBoatAdapter;
 import org.example.structural.adapter.ex2.CardSSDAdapter;
 import org.example.structural.adapter.ex2.Notebook;
-import org.example.structural.bridge.FlyingEnchantment;
-import org.example.structural.bridge.Hammer;
-import org.example.structural.bridge.SoulEatingEnchantment;
-import org.example.structural.bridge.Sword;
-import org.example.structural.composite.Messenger;
+import org.example.structural.bridge.ex1.FlyingEnchantment;
+import org.example.structural.bridge.ex1.Hammer;
+import org.example.structural.bridge.ex1.SoulEatingEnchantment;
+import org.example.structural.bridge.ex1.Sword;
+import org.example.structural.bridge.ex2.*;
+import org.example.structural.composite.ex1.Messenger;
+import org.example.structural.composite.ex2.Bloco;
+import org.example.structural.composite.ex2.BlocoSimples;
+import org.example.structural.composite.ex2.ParedeDeBlocos;
+import org.example.structural.decorator.Bolo;
+import org.example.structural.decorator.BoloSimples;
+import org.example.structural.decorator.CoberturaChocolate;
+import org.example.structural.decorator.Morango;
 
 /**
  * Hello world!
@@ -102,8 +110,16 @@ public class App {
 		hammer.swing();
 		hammer.unwield();
 
-		//Composite
+		Dispositivo tv = new TV();
+		Dispositivo radio = new Radio();
 
+		ControleRemoto controle = new ControleSimples(tv);
+		controle.ligarDesligar();
+
+		controle = new ControleSimples(radio);
+		controle.ligarDesligar();
+
+		//Composite
 		Messenger messenger = new Messenger();
 
 		log.info("Message from the orcs: ");
@@ -111,6 +127,25 @@ public class App {
 
 		log.info("Message from the elves: ");
 		messenger.messageFromElves().print();
+
+		Bloco bloco1 = new BlocoSimples();
+		Bloco bloco2 = new BlocoSimples();
+
+		ParedeDeBlocos parede = new ParedeDeBlocos();
+		parede.adicionarBloco(bloco1);
+		parede.adicionarBloco(bloco2);
+
+		parede.construir();
+
+		//Decorator
+		Bolo boloSimples = new BoloSimples();
+		System.out.println(boloSimples.fazer());
+
+		Bolo boloComChocolate = new CoberturaChocolate(boloSimples);
+		System.out.println(boloComChocolate.fazer());
+
+		Bolo boloCompleto = new Morango(boloComChocolate);
+		System.out.println(boloCompleto.fazer());
 	}
 
 }

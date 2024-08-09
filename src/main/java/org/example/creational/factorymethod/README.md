@@ -1,0 +1,1 @@
+Define um método para criar objetos, mas permite que as subclasses decidam qual classe concreta instanciar. Em outras palavras, as subclasses podem alterar o tipo de objeto que será criado.
