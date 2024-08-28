@@ -30,6 +30,7 @@ import org.example.structural.decorator.Bolo;
 import org.example.structural.decorator.BoloSimples;
 import org.example.structural.decorator.CoberturaChocolate;
 import org.example.structural.decorator.Morango;
+import org.example.structural.facade.DwarvenGoldmineFacade;
 
 /**
  * Hello world!
@@ -146,6 +147,12 @@ public class App {
 
 		Bolo boloCompleto = new Morango(boloComChocolate);
 		System.out.println(boloCompleto.fazer());
+
+		//Facade
+		DwarvenGoldmineFacade facade = new DwarvenGoldmineFacade();
+		facade.startNewDay();
+		facade.digOutGold();
+		facade.endDay();
 	}
 
 }
