@@ -1,6 +1,9 @@
 package org.example;
 
 import lombok.extern.slf4j.Slf4j;
+import org.example.behavioral.chain_of_responsibility.OrcKing;
+import org.example.behavioral.chain_of_responsibility.Request;
+import org.example.behavioral.chain_of_responsibility.RequestType;
 import org.example.creational.abstractfactory.AbstractProduct;
 import org.example.creational.abstractfactory.Application;
 import org.example.creational.abstractfactory.ConcretProduct;
@@ -153,6 +156,12 @@ public class App {
 		facade.startNewDay();
 		facade.digOutGold();
 		facade.endDay();
+
+		//Chain Of Responsibility
+		var king = new OrcKing();
+		king.makeRequest(new Request(RequestType.DEFEND_CASTLE, "defend castle"));
+		king.makeRequest(new Request(RequestType.TORTURE_PRISONER, "torture prisoner"));
+		king.makeRequest(new Request(RequestType.COLLECT_TAX, "collect tax"));
 	}
 
 }
